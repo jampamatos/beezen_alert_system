@@ -1,0 +1,23 @@
+<main class="container mx-auto mt-8">
+  <h2 class="mb-4 text-xl">All Alerts</h2>
+  <table class="w-full border-collapse">
+    <thead>
+      <tr>
+        <th class="border p-2 bg-light-gray">Alert Type</th>
+        <th class="border p-2 bg-light-gray">Tag</th>
+        <th class="border p-2 bg-light-gray">Description</th>
+        <th class="border p-2 bg-light-gray">Origin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @alerts.each_with_index do |alert, index| %>
+        <tr class="<%= index.even? ? 'bg-light-gray' : 'bg-lighter-gray' %>">
+          <td class="border p-2"><%= alert.alert_type %></td>
+          <td class="border p-2"><%= alert.tag %></td>
+          <td class="border p-2"><%= alert.description %></td>
+          <td class="border p-2"><%= alert.origin %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>
